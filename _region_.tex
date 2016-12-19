@@ -1,0 +1,942 @@
+\message{ !name(hakgu806_TDDB84_upg1_HT2015.tex)}
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+\usepackage{listings}
+%\lstdefinestyle{mystyle}{
+%  breaklines=true
+%}
+%\lstset{style=mystyle}
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+\usepackage{graphicx}
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+%\usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+\message{ !name(hakgu806_TDDB84_upg1_HT2015.tex) !offset(-3) }
+
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{How does the use of the Factory Method Pattern in FreeCol affect maintainability and understandability as measured with Coupling between object classes (CBO) and Number of children (NOC)}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{H\.{a}kan Gudmundsson}
+\IEEEauthorblockA{Computer Engineering\\
+Link\"{o}ping University\\
+Link\"{o}ping, Sweden\\
+Email: hakgu806@student.liu.se}}
+%\and
+%\IEEEauthorblockN{Homer Simpson}
+%\IEEEauthorblockA{Twentieth Century Fox\\
+%Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\and
+%\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+%\IEEEauthorblockA{Starfleet Academy\\
+%San Francisco, California 96678--2391\\
+%Telephone: (800) 555--1212\\
+%Fax: (888) 555--1212}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+  This paper will analyze what impact an implementation of the Factory Method design pattern has on a software's maintainability and understandability.
+  The game FreeCol will be examined to determine the effect the Factory Method has and what purpose it serves.
+  The subject software quality is defined and metrics suitable for measuring maintainability and understandability are chosen.
+  
+  The findings are analyzed and discussed.
+% Defines a way that the paper handle software quality
+  
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+% no \IEEEPARstart
+
+The concept of design patterns was brought up by the architect Christoffer Alexander, in 1977, as solution to common problems in architectural designs.
+The basics of the concept was easy to understand and people began to experiment with implementing it in the architectural designs of computer programs.
+In 1987 Kent Beck and Ward Cunningham presented the results of such an experiment \cite{oopsla}, but it would take a few more years before the concept really would gain popularity. 
+In 1994, the book \cite{gof} was released, where the authors introduce the principles of design patterns in computer software and also offers a catalog of 23 design patterns that are still being used today.
+
+Software is used in almost everything these days, in your phone, in cars, and even in your home.
+We depend a lot on software and therefore it's important that the quality is high.
+Chappell\cite{aspects} highlights that there are three aspects when defining software quality, process quality, structural quality and functional quality.
+Process quality is about the developing process and has to do with meeting delivery dates and meeting budgets, structural quality is about the quality of the code itself and functional quality comes in to play when the software reaches its users and has a big focus on if the software met the specified requirements.
+This paper will look at an implementation of the Factory method in the game FreeCol\footnote{\url{http://www.freecol.org/}} to analyze how it impacts maintainability and understandability.
+FreeCol is an open source, turn-based strategy game written in Java\footnote{\url{https://www.java.com/}} similar to Civilization\footnote{\url{https://www.civilization.com/}}.
+Since this paper is about analyzing and measuring software quality in code it will focus on the structural quality.
+
+Implementing a design pattern isn't a guarantee that the quality of your software is going to increase.
+However as shown in \cite{eosdp}, Zhang et. al. reaches the conclusion that there is some qualitative support for design patterns to provide a framework for maintenance.
+Another study, \cite{gofams} also reports that 18 out of 23 of the patterns presented in \cite{gof} have been reported to have a positive effect on software maintainability.
+\\\\
+ \emph{``If we can't learn something, we won't understand it. If
+we can't understand something, we can't use it - at least
+not well enough to avoid creating a money pit. We can't
+maintain a system that we don't understand - at least not
+easily. And we can't make changes to our system if we
+can't understand how the system as a whole will work
+once the changes are made''}\cite{mbm}
+\\\\
+The rest of the paper is organized as follows, section II covers background, section III presents the implementation of the factory method design pattern in FreeCol, in section IV the metrics results will be presented, in section V the implementation and general use of the factory design pattern is analyzed and in section VI the conclusion is presented.
+
+% Put in background maybe
+%When listing the attributes of structural quality in \cite{aspects}, one of them is code maintainability.
+%Maintainability is also bought up in the \emph{CISQ's quality model}\cite{cisq} amongst four other desirable characteristics that are needed to provide value for a product.
+%These characteristics are: reliability, efficiency, security, maintainability and size.
+%This paper will focus solely on the maintainability part of this lot.
+%Maintainability is an attractive attribute to optimize in software since it will reduce the time spent on maintenance.
+%A company focusing on maintainability will therefore have to spend less money on maintenance.
+
+
+
+% MAYBE PUT THIS IN BACKGROUND ABOUT SOFTWARE METRICS
+% \cite{cisq} lists some coding practices that is important have in mind when writing software with maintainability in mind.
+% One of these practices listed is to look at how tightly coupled modules are.
+%Coupling is, as described in \cite{ssev}, a measure of how closely connected two routines or modules are.
+
+%To measure maintainability the maintainability index \cite{mindex} will be used.
+%This metric combines Halstead volume (HV), Cyclomatic complexity (CC), Line of code (LOC) and
+% DELETE MOST CERTAINLY
+
+% Use Afferent coupling, Efferent coupling and Instability to measure maintainability
+% Maintainability index outdated? according to
+% Maintainability is an attractive attribute since it reduces time and cost
+% Give an intro to design patterns
+% Give intro to FreeCol
+% Give intro to 
+% One way to improve software quality is to use design patterns to structure 
+
+
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+
+\hfill  mds
+ 
+\hfill \today
+
+\section{Background}
+This section will cover the background and theory of the design pattern and software qualities and metrics that will be examined in this paper.
+
+\subsection{Factory Method pattern}
+Gamma et. al\cite{gof} introduces the intent of a Factory Method pattern as follows: ``Define an interface for creating an object, but let subclasses decide which class to instantiate. The Factory method lets a class defer instantiation it uses to subclasses''.
+It is considered a creational pattern\cite{gof}, meaning that it abstracts the instantiation process of objects. 
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=2.5in]{349px-FactoryMethod}
+  \caption{UML of the Factory Method Design pattern}
+  \label{fm}
+\end{figure}
+
+As seen in fig. \ref{fm} the Factory Method encapsulates the knowledge of which \emph{Product} subclass to create and moves this knowledge out to be decided by the \emph{Concrete Creator}.
+This leads to lower coupling, since it decouples the client code in the superclass from the code that creates the object in the subclass.
+It also enforces the SOLID\footnote{\url{https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)}} principle, Dependency Inversion principle\cite{dip} in such a way that the dependencies of the client are solely to abstract classes and interfaces, and never to the concrete subclasses they are passed to.
+
+Studies have show that, although the Factory Method pattern improves some areas of software quality, it doesn't only have positive effects \cite{isqp}\cite{cmdp}\cite{gofams}.
+Although the studies agree that the Factory Method pattern has a positive effect on maintainability, \cite{isqp} finds that it also has a negative effect on understantability.
+
+% TODO: describe how the factory pattern works
+
+\subsection{Software quality metrics}
+Software quality is a broad subject and may be understood different by different people.
+Therefore it is important to introduce some definitions of what view on software quality will be used in the analysis in this paper.
+As stated in the introduction, this paper will be focusing on the structural quality in its analysis.
+In the paper \cite{aspects} Chappell some attributes of structural quality.
+These aspects are: code testability, code efficiency, code security, code understandability and code maintainability.
+Code maintainability is described as ``How easy it is to add new code or change existing code without introducing bugs''.
+Code understandability is described with two questions you need to ask yourself, ``Is the code readable?'' and ``Is it more complex than it needs to be?''.
+
+Maintainability is also bought up in the \emph{CISQ's quality model}\cite{cisq} as a desirable characteristic that is needed to provide value for a product.
+\cite{cisq} lists some coding practices that is important have in mind when writing software with maintainability in mind.
+One of these practices listed is to look at how tightly coupled modules are.
+Coupling is, as described in \cite{ssev}, a measure of how closely connected two routines or modules are.
+
+Understandability is described in the study \cite{qmood} as a linear combination of abstraction, encapsulation, coupling, cohesion, polymorphism, complexity and design size.
+There's a lot of factors that can affect the complexity of software.
+In the study \cite{complexity} the authors list some of the major principles behind Object-Oriented paradigm and their impact on software complexity, one of them being inheritance.
+Inheritance\footnote{\url{https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html}} makes it possible to create a class that is based on an other class and inherits methods and fields from that class.
+This might, if overused, lead to classes that are hard to understand\cite{complexity}, in other words the complexity of the classes are high.
+
+\subsubsection{CBO}
+A metric used for measuring coupling is \emph{Coupling between object classes} (CBO) which was developed by Chidamber et. al. \cite{metrics}.
+The CBO value of a class is a count of the number of other classes to which it is coupled.
+High CBO values means that the class is highly coupled and according to \cite{risklevels} and \cite{metrics} would make it difficult to maintain.
+
+\subsubsection{NOC}
+As stated above, inheritance can lead to high complexity in classes.
+One metric used for measuring complexity, that also takes inheritance into consideration, is \emph{Number of children} (NOC) which was developed by Chidamber et. al. \cite{metrics}.
+This metric counts the number of classes that is a subclass (eg. inherits) from a chosen class.
+A high value of NOC means that the class have many subclasses.
+This might lead to the main class being hard to understand since in order to understand how the functionality of the main class you also must understand all of its subclasses \cite{risklevels}.
+
+\subsubsection{Metric thresholds}
+Threshold values for CBO and NOC has been studied in \cite{breakpoints}.
+The study concludes that the following values of CBO and NOC are acceptable and these threshold intervals will be used in the analysis in this paper.
+
+\begin{table}[h]
+  \centering
+  \caption{Threshold values}
+  \label{tab:metric}
+  \begin{tabular}{lc}
+    Metric & Interval \\
+    \hline
+    CBO & 0-8 \\
+    NOC & 0-6 \\
+  \end{tabular}
+\end{table}
+
+When deciding the CBO and NOC values in this paper a program called \emph{ckjm}\footnote{\url{http://www.spinellis.gr/sw/ckjm/}} will be used.
+This program calculates the metrics proposed by Chidamber and Kemerer \cite{metrics} by processing the bytecode of compiled Java files.
+%\subsubsection{Maintainability metric}
+% Motivate the choice of metric
+%\subsubsection{Understantability metric}
+% Motivate the choice of metric
+
+% cite: Measurements of software maintainability
+% TODO: describe how to measure maintainability and understandability
+
+\section{Implementation in FreeCol}
+% How is it used?
+% What good does it do?
+In the game FreeCol an implementation of the Factory Method pattern is found in the package \texttt{net.sf.freecol.common.resources}.
+The pattern is used to decouple the use of the class \texttt{Resource} in the game.
+This is done by using the Factory Method \texttt{createResource} in the class \texttt{ResourceFactory} to create resource objects like \texttt{FAFileResource}, \texttt{SZAResource} etc.
+An UML diagram of how the classes are connected is show in fig. \ref{fmfc} and the code of the Factory Method is show in listing \ref{imp}.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=2.5in]{uml}
+  \caption{UML of the Factory Method Design pattern as implemented in FreeCol}
+  \label{fmfc}
+\end{figure}
+
+\begin{lstlisting}[language=Java, breaklines=true, caption={Implementation of the Factory Method pattern in FreeCol}, label=imp]
+public static Resource createResource(URI uri) {
+  Resource r = getResource(uri);
+  if (r == null) {
+    try {
+      if ("urn".equals(uri.getScheme())) {
+        if (uri.getSchemeSpecificPart().startsWith(ColorResource.SCHEME)) {
+          r = new ColorResource(uri);
+        } else if (uri.getSchemeSpecificPart().startsWith(FontResource.SCHEME)) {
+          r = new FontResource(uri);
+        }
+      } else if (uri.getPath().endsWith(".faf")) {
+        r = new FAFileResource(uri);
+      } else if (uri.getPath().endsWith(".sza")) {
+        r = new SZAResource(uri);
+      } else if (uri.getPath().endsWith(".ttf")) {
+        r = new FontResource(uri);
+      } else if (uri.getPath().endsWith(".wav")) {
+        r = new AudioResource(uri);
+      } else if (uri.getPath().endsWith(".ogg")) {
+        if (uri.getPath().endsWith(".video.ogg")) {
+          r = new VideoResource(uri);
+        } else {
+          r = new AudioResource(uri);
+        }
+      } else {
+        r = new ImageResource(uri);
+      }
+      resources.put(uri, new WeakReference<Resource>(r));
+    } catch (Exception e) {
+      logger.log(Level.WARNING,
+      "Failed to create resource with URI: " + uri, e);
+    }
+  }
+  return r;
+}
+\end{lstlisting}
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+\section{Results}
+The results of the measurements of CBO and NOC are presented here.
+The metrics was taken from the classes \texttt{ResourceFactory} and \texttt{Resource}.
+
+\begin{table}[h]
+  \centering
+  \caption{Results}
+  \label{result}
+  \begin{tabular}{lcc}
+    \label{results}
+    Class & CBO & NOC \\
+    \hline
+    ResourceFactory & 1 & 0 \\
+    Resource & 0 & 7 \\
+  \end{tabular}
+\end{table}
+
+\section{Discussion}
+In this section of the paper discussions are held regarding the implementation of the Factory Method pattern in FreeCol, the results of the measurements and the impact the use of the Factory Method pattern have on maintainability and understandability.
+
+%\subsection{Implementation in FreeCol}
+% What does it do?
+% If it wasn't implemented what would happen?
+
+\subsection{CBO and NOC}
+The classes that was included in this analysis was as stated above, \texttt{ResourceFactory} and \texttt{Resource}.
+The resource factory class was chosen because its the class containing the factory method.
+The resource class was chosen because it will give the most valuable information about maintainability and understandability using the CBO and NOC metrics, since measuring all the subclasses to the resource class will not say much unless the pattern is implemented inaccurately.
+% What are the results?
+% How do they affect maintainability and understandability
+
+According to the results presented in table \ref{results} and the threshold values in table \ref{tab:metric} it is shown that both the classes are inside the acceptable interval when it comes to the CBO values.
+So according to \cite{breakpoints} no design refinements are necessary.
+% Maybe write more about impact on maintainability
+
+When looking at the NOC values it appears that the class \texttt{Resource} has a slightly higher value than whats accepted according to the NOC threshold.
+This has to do with that the class is used in the Factory Method design pattern as an abstract class used to decouple the creation of the other resource classes.
+It means that the more different resource classes that exists and adapts the Factory Method pattern by extending the resource class, the higher the NOC value will be.
+According to \cite{breakpoints} the class needs to be split to meet the required threshold value.
+One solution to lower the NOC value is to make even further abstractions of resources.
+Making subclasses to the subclasses of the resource class.
+This solution would lower NOC value amongst classes but it would also introduce more abstractions which could lead to more complex software \cite{complexity}.
+
+In the study \cite{mmqo} the researchers use the same metrics as in this paper (CBO and NOC) amongst other, to measure software quality.
+Their analysis is performed on the Java chart library \emph{JFreeChart}\footnote{\url{http://www.jfree.org/jfreechart/}} which is a software that is about the same size as FreeCol.
+
+\begin{itemize}
+\item{FreeCol: 103800 lines of code}
+\item{JFreeChart (v.1.0.14): 11030 lines of code}
+\end{itemize}
+
+The paper concludes that the metrics directly reflects the quality of the software.
+It also concludes that the quality of software decreases as it evolves.
+
+%complexity will only decrease software quality if poorly managed
+\subsection{Maintainability and understandability}
+Maintainability is defined in this paper with coupling and measured with CBO.
+The low value of CBO suggest that maintaining these classes would not be especially time consuming since low coupling means that the sensitivity to changes in other parts of the design is low \cite{metrics} \cite{risklevels}.
+This is much thanks to the Factory Method pattern.
+If the pattern wasn't implemented, the responsibility of creating the concrete classes (the classes extending the resource class) wouldn't lie in subclasses of the resource class.
+One solution would be to simply let the resource class create hold the concrete classes.
+This would lead to much higher coupling since this class would be responsible and contain different information and behaviour depending on what resource it should represent.
+From a maintainability viewpoint this wouldn't be especially attractive since such a class would be very hard to make changes to due to the high coupling.
+
+Understandability is defined in this paper as how many subclasses a certain class has and is measured with NOC.
+As stated above, the results in table \ref{results} show that the NOC value from the resource class is 7, thus just outside the threshold values in table \ref{tab:metric}.
+This is the result of the abstraction used in the Factory Method pattern.
+As all the different resources extends the abstract class resource, the more resources there are, the more subclasses will have to extend the resource class and thereby the NOC value will increase.
+If the solution above would be used the NOC value would be smaller, since none of the resource subclasses would exist.
+As a result, the class would, per definition, be easier to understand.
+
+However, with this solution the class would break the Dependency Inversion principle, as the dependencies of the client (the game) would no longer be to the abstract class resource but instead to the concrete class resource.
+So the class would be referenced directly from the client, breaking the Inversion Dependency principle.
+
+This paper have used metrics taken from \cite{metrics}.
+There are other metrics that could have been used, for example, the metrics produced in the study \cite{qmood}.
+However the metrics in \cite{metrics} are focused on class level \cite{oodqm}, and since this paper focused on analyzing an implementation of the Factory Method pattern in a larger software, this set of metrics was preferred. 
+
+% if thepattern wasnt implemented and the class was implemented as above the NOC values would be lower. what would this do?
+\subsection{Factory Method pattern}
+% Based on maintainability and understandability, should the factory method pattern be used?
+According to Gamma et. al. \cite{gof} design patterns makes a system less complex by letting you talk about it at a higher level of abstraction than if you where using program language.
+For example the phrase ``Let's use a Factory Method here,'' which describes many steps of implementation, can be used instead of describing every step on its own.
+
+In \cite{fmjava} the Factory Method patterns use in API design is studied.
+Instead of using software metrics as used in this paper, the study used participants who had considerable experience of the Factory Method pattern.
+The participants was given a task which they had to complete and then fill out a survey with their experiences.
+The study concludes that the pattern impairs usability, much because the participants found that the pattern was hard to understand.
+
+It seems fair to assume that the Factory Method pattern have a negative effect on understandability and a positive effect on maintainability, based on the study made in this paper and other studies on the subject \cite{isqp}\cite{cmdp}\cite{gofams}\cite{fmjava}.
+So when choosing whether or not to use the Factory Method pattern based on maintainability and understandability one will have to decide which of the two qualities to prefer over the other.
+This, of course will differ from one situation to another.
+One way is to look at which quality is generally more attractive than the other.
+In \cite{gofams} a mapping study is carried out on papers and studies and certain keywords for pattern effect on quality are counted.
+Maintainability and understandability are two of these keywords and its presented that maintainability is mentioned more often than understandability.
+
+\begin{itemize}
+\item{Maintainability: 7 mentions in papers and studies}
+\item{Understandability: 5 mentions in papers and studies}
+\end{itemize}
+
+The study also concludes that maintainability and understandability is one of the most commonly investigated quality attributes.
+
+% lägg vikt på hur attraktivt maintainability är jämfört med understandability
+% generellt sett bättre att fokusera på maintainability 
+\section{Conclusion}
+% on could conclude that maintainability is more weighted than understandability
+There are many factors that have an impact on software quality.
+In this paper, maintainability and understandability have been studied and how the Factory Method pattern impact these two factors.
+The software quality maintainability is related to coupling and understandability is related to inheritance.
+Popular metrics used to measure software quality on class level are CBO, for coupling and NOC, for inheritance.
+One study on software metrics suggests that a value between 0-8 for CBO and a value between 0-6 for NOC is acceptable.
+
+According to the metrics used, the Factory Method pattern have a positive effect on maintainability and a negative effect on understandability.
+Maintainability seems to be a more sought after quality than understandability, so one might put this into consideration when deciding whether or not to use the pattern.
+
+In the game FreeCol the Factory Method pattern decrease coupling but also creates a lot of subclasses.
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgment
+\section*{Acknowledgment}
+
+
+The authors would like to thank...
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem{gof}
+  Gamma, Erich. Design patterns: elements of reusable object-oriented software. Pearson Education India, 1995.
+  
+\bibitem{aspects}
+  Chappell, David. "The three aspects of software quality: Functional, structural, and process." (2013).
+
+\bibitem{escm}
+  Weyuker, Elaine J. "Evaluating software complexity measures." IEEE transactions on Software Engineering 14.9 (1988): 1357-1365.
+  
+\bibitem{cisq}
+  Soley, Richard Mark, and Bill Curtis. "The Consortium for IT Software Quality (CISQ)." International Conference on Software Quality. Springer Berlin Heidelberg, 2013.
+
+\bibitem{ssev}
+  ISO, IEC. "IEEE, Systems and Software Engineering--Vocabulary." IEEE computer society, Piscataway, NJ (2010).
+
+\bibitem{oopsla}
+  Beck, Kent, and Ward Cunningham. "Using pattern languages for object-oriented programs." (1987).
+
+\bibitem{isqp}
+  Khomh, Foutse, and Yann-Gael Gueheneuce. "Do design patterns impact software quality positively?." Software Maintenance and Reengineering, 2008. CSMR 2008. 12th European Conference on. IEEE, 2008.
+  
+\bibitem{cmdp}
+  Rajan, Hridesh, Steven M. Kautz, and Wayne Rowcliffe. "Concurrency by modularity: Design patterns, a case in point." ACM Sigplan Notices. Vol. 45. No. 10. ACM, 2010.
+  
+\bibitem{gofams}
+  Ampatzoglou, Apostolos, Sofia Charalampidou, and Ioannis Stamelos. "Research state of the art on GoF design patterns: A mapping study." Journal of Systems and Software 86.7 (2013): 1945-1964.
+  
+\bibitem{eosdp}
+  Zhang, Cheng, and David Budgen. "What do we know about the effectiveness of software design patterns?." IEEE Transactions on Software Engineering 38.5 (2012): 1213-1231.
+
+\bibitem{fmapi}
+  Ellis, Brian, Jeffrey Stylos, and Brad Myers. "The factory pattern in API design: A usability evaluation." Proceedings of the 29th international conference on Software Engineering. IEEE Computer Society, 2007.
+
+\bibitem{dip}
+  Martin, Robert C. "The dependency inversion principle." C++ Report 8.6 (1996): 61-66.
+
+\bibitem{metrics}
+  Chidamber, Shyam R., and Chris F. Kemerer. "A metrics suite for object oriented design." IEEE Transactions on software engineering 20.6 (1994): 476-493.
+
+\bibitem{qmood}
+  Bansiya, Jagdish, and Carl G. Davis. "A hierarchical model for object-oriented design quality assessment." IEEE Transactions on software engineering 28.1 (2002): 4-17.
+
+\bibitem{complexity}
+  Kalakota, Ravi, Sukumar Rathnam, and Andrew B. Whinston. "The role of complexity in object-oriented systems development." System Sciences, 1993, Proceeding of the Twenty-Sixth Hawaii International Conference on. Vol. 4. IEEE, 1993.
+
+\bibitem{risklevels}
+  Shatnawi, Raed. "A quantitative investigation of the acceptable risk levels of object-oriented metrics in open-source systems." IEEE Transactions on software engineering 36.2 (2010): 216-225.
+
+\bibitem{breakpoints}
+  Chandra, E., and P. Edith Linda. "Class break point determination using CK metrics thresholds." Global journal of computer science and technology 10.14 (2010).
+
+\bibitem{mbm}
+  Nazir, Mohd, Raees A. Khan, and Khurram Mustafa. "A metrics based model for understandability quantification." arXiv preprint arXiv:1004.4463 (2010).
+
+\bibitem{mmqo}
+  Singh, Gagandeep. "Metrics for measuring the quality of object-oriented software." ACM SIGSOFT Software Engineering Notes 38.5 (2013): 1-5.
+  
+\bibitem{oodqm}
+  El-Wakil, Mohamed, et al. "Object-oriented design quality models a survey and comparison." 2nd International Conference on Informatics and Systems (INFOS 2004). 2004.
+
+\bibitem{fmjava}
+  Ellis, Brian, Jeffrey Stylos, and Brad Myers. "The factory pattern in API design: A usability evaluation." Proceedings of the 29th international conference on Software Engineering. IEEE Computer Society, 2007.
+  
+\end{thebibliography}
+
+
+
+
+% that's all folks
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+\message{ !name(hakgu806_TDDB84_upg1_HT2015.tex) !offset(-942) }
